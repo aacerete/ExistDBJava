@@ -1,0 +1,31 @@
+
+vsquid:S00122"TAt most one statement is allowed per line, but 2 statements were found on this line.(¸Ìó÷øÿÿÿÿ8ÀÑâ®+
+8squid:S1643"Use a StringBuilder instead.(Ğ³öò8ÀÑâ®+
+|squid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÿ“ğˆùÿÿÿÿ8ÀÑâ®+
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(¨Ï¹Ã8ÀÑâ®+
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(»¶ß€8ÀÑâ®+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(ÖÍ³ıÿÿÿÿ8ÀÑâ®+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(ŞçŸĞ8ÀÑâ®+
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(Ø‰øî8ÀÑâ®+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(éÊ—°ùÿÿÿÿ8ÀÑâ®+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(¸Ìó÷øÿÿÿÿ8ÀÑâ®+
+Asquid:S2068" Remove this hard-coded password.(ÿ“ğˆùÿÿÿÿ8ÀÑâ®+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(–Ë‡ƒ8ÀÑâ®+
+wsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÃĞ¹8ÀÑâ®+
+V
+squid:S106";Replace this usage of System.out or System.err by a logger.(ô…±Ö8ÀÑâ®+
+Ysquid:S1197"8Move the array designator from the variable to the type.(º ìıÿÿÿÿ8ÀÑâ®+
+Vsquid:S1118":Add a private constructor to hide the implicit public one.(†‡Ó8ÀÑâ®+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(õá˜õùÿÿÿÿ8ÀÑâ®+
+1squid:S1220""Move this file to a named package.
+Tsquid:S1313"3Make this IP "172.31.101.225" address configurable.(…Ñõºùÿÿÿÿ8ÀÑâ®+
+vsquid:S00115"ZRename this constant name to match the regular expression '^[A-Z][A-Z0-9]*(_[A-Z0-9]+)*$'.(ÏÒáK8ÀÑâ®+
+[
+squid:S106";Replace this usage of System.out or System.err by a logger.(ñè˜ûÿÿÿÿ8ÀÑâ®+
+Lsquid:UselessImportCheck"Remove this duplicated import.(€ÓáÌÿÿÿÿÿ8€é–â®+
