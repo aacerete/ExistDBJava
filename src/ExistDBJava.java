@@ -36,8 +36,10 @@ public class ExistDBJava {
             afegirRecursColeccio();
             System.out.println("Arxiu xml afegit");
 
-            //Fem una query sobre els arxius de la nostra col·leccio
+
+            //Fem una query sobre els arxius de la nostra col·leccio i separem els resultats a partir de splits
             String[] resultats = realitzarQuery("collection('aacereteDB')/mondial/country").replaceAll("</country>","").split("<country>");
+
             for (String resultat: resultats) {
 
                 System.out.print(resultat);
