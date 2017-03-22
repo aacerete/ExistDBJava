@@ -13,16 +13,17 @@ import org.xmldb.api.modules.CollectionManagementService;
 import javax.xml.xquery.*;
 import java.io.File;
 
+
 public class ExistDBJava {
 
-    private static final String usuari = "admin";
-    private static final String contrasenya = "root";
-    private static final String path = "mondial.xml";
-    private static final String novaColeccio ="aacereteCollection";
-    private static final String PORT = "8080";
     private static final String IP = "localhost";
-    private static final String URI = "xmldb:exist://localhost:8080/exist/xmlrpc";
+    private static final String PORT = "8080";
+    private static final String URI = "xmldb:exist://"+IP+":"+PORT+"/exist/xmlrpc/db";
     private static final String driver = "org.exist.xmldb.DatabaseImpl";
+    private static final String usuari = "admin";
+    private static final String contrasenya = "admin";
+    private static final String XMLFile = "mondial.xml";
+    private static final String novaColeccio ="/aacereteCollection";
 
     public static void main(String args[]){
 
@@ -36,9 +37,8 @@ public class ExistDBJava {
             afegirRecursColeccio();
             System.out.println("Arxiu xml afegit");
 
-
             //Fem una query sobre els arxius de la nostra col·leccio i separem els resultats a partir de splits
-            String[] resultats = realitzarQuery("collection('aacereteDB')/mondial/country").replaceAll("</country>","").split("<country>");
+            String[] resultats = realitzarQuery("collection('aacereteCollection')/mondial/country/name").replaceAll("</name>","").split("<name>");
 
             for (String resultat: resultats) {
 
@@ -68,29 +68,29 @@ public class ExistDBJava {
         DatabaseManager.registerDatabase(database);
 
         //Creem la nova col·lecció
-        Collection parent = DatabaseManager.getCollection(URI+"/db", usuari, contrasenya);
+        Collection parent = DatabaseManager.getCollection(URI, usuari, contrasenya);
         CollectionManagementService c = (CollectionManagementService) parent.getService("CollectionManagementService", "1.0");
-        c.createCollection("aacereteCollection");
+        c.createCollection(novaColeccio);
     }
 
     private static void afegirRecursColeccio() throws XMLDBException, ClassNotFoundException, IllegalAccessException, InstantiationException{
 
-        File file = new File(path);
+        File f = new File("mondial.xml");
 
         //Realitzem la connexio
-        Class classe = Class.forName(driver);
-        Database database = (Database) classe.newInstance();
+        Class clas = Class.forName(driver);
+        Database database = (Database) clas.newInstance();
         database.setProperty("create-database", "true");
 
        //Creem manegador
         DatabaseManager.registerDatabase(database);
 
         //Instanciem la col·lecció a la que afegim el recurs xml
-        Collection collection = DatabaseManager.getCollection(URI+"/db/"+ novaColeccio, usuari, contrasenya);
+        Collection collection = DatabaseManager.getCollection(URI+novaColeccio, usuari, contrasenya);
 
         //Afegim el recurs
-        Resource resource = collection.createResource(path, "XMLResource");
-        resource.setContent(file);
+        Resource resource = collection.createResource("mondial.xml", "XMLResource");
+        resource.setContent(f);
         collection.storeResource(resource);
     }
 

@@ -7,7 +7,7 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="XMLDB" level="project" />
-    <orderEntry type="library" name="JARS" level="project" />
+    <orderEntry type="library" name="examples" level="project" />
+    <orderEntry type="library" name="antlr-2.7.7" level="project" />
   </component>
 </module>
