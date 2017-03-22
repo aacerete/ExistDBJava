@@ -25,7 +25,7 @@ public class ExistDBJava {
     private static final String XMLFile = "mondial.xml";
     private static final String novaColeccio ="/aacereteCollection";
 
-    public static void main(String args[]){
+    public static void main(String args[]) throws XQException {
 
         try{
 
@@ -37,10 +37,12 @@ public class ExistDBJava {
             afegirRecursColeccio();
             System.out.println("Arxiu xml afegit");
 
-            //Fem una query sobre els arxius de la nostra col·leccio i separem els resultats a partir de splits
-            String[] resultats = realitzarQuery("collection('aacereteCollection')/mondial/country/name").replaceAll("</name>","").split("<name>");
+            //Fem una query sobre els arxius de la nostra col·leccio i separem els resultats a partir de splits (Mostrarem la llista de noms paisos)
+            String query = "collection('aacereteCollection')/mondial/country/name";
+            String nomPaisos = realitzarQuery(query);
+            String [] names = nomPaisos.replaceAll("</name>","").split("<name>");
 
-            for (String resultat: resultats) {
+            for (String resultat: names) {
 
                 System.out.print(resultat);
 
